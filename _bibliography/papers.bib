@@ -1,9 +1,10 @@
 ---
 ---
 
-@string{aps = {American Physical Society,}}
 
-@book{einstein1920relativity,
+string{aps = {American Physical Society,}}
+
+book{einstein1920relativity,
   title={Relativity: the Special and General Theory},
   author={Einstein, Albert},
   year={1920},
@@ -11,7 +12,7 @@
   html={relativity.html}
 }
 
-@book{einstein1956investigations,
+book{einstein1956investigations,
   bibtex_show={true},
   title={Investigations on the Theory of the Brownian Movement},
   author={Einstein, Albert},
@@ -20,7 +21,7 @@
   preview={brownian-motion.gif}
 }
 
-@article{einstein1950meaning,
+article{einstein1950meaning,
   abbr={AJP},
   bibtex_show={true},
   title={The meaning of relativity},
@@ -33,7 +34,38 @@
   publisher={American Association of Physics Teachers}
 }
 
-@article{PhysRev.47.777,
+@article{TraveLER,
+  abbr={EMNLP 2024},
+  title={TraveLER: A Modular Multi-LMM Agent Framework for Video Question-Answering},
+  author={Chuyi Shang*, Amos You, Sanjay Subramanian, Trevor Darrell, Roi Herzig},
+  abstract={Recently, image-based Large Multimodal Models (LMMs) have made significant progress in video question-answering (VideoQA) using a frame-wise approach by leveraging large-scale pretraining in a zero-shot manner. Nevertheless, these models need to be capable of finding relevant information, extracting it, and answering the question simultaneously. Currently, existing methods perform all of these steps in a single pass without being able to adapt if insufficient or incorrect information is collected. To overcome this, we introduce a modular multi-LMM agent framework based on several agents with different roles, instructed by a Planner agent that updates its instructions using shared feedback from the other agents. Specifically, we propose TraveLER, a method that can create a plan to "Traverse" through the video, ask questions about individual frames to "Locate" and store key information, and then "Evaluate" if there is enough information to answer the question. Finally, if there is not enough information, our method is able to "Replan" based on its collected knowledge. Through extensive experiments, we find that the proposed TraveLER approach improves performance on several VideoQA benchmarks without the need to fine-tune on specific datasets. Our code is available at https://github.com/traveler-framework/TraveLER},
+  journal={EMNLP},
+  year={2024},
+  publisher=aps,
+  pdf={https://arxiv.org/abs/2404.01476},
+  html={https://traveler-framework.github.io},
+  dimensions={true},
+  google_scholar_id={d1gkVwhDpl0C},
+  selected={true},
+  preview={traveler.png}
+}
+
+
+@article{LUSE,
+  abbr={CVEU @ ICCV 2023},
+  title={LUSE: Using LLMs for Unsupervised Step Extraction in Instructional Videos},
+  author={Chuyi Shang*, Emi Tran*, Medhini Narasimhan, Sanjay Subramanian, Dan Klein, Trevor Darrell},
+  abstract={In this work, we introduce an unsupervised languageonly approach to automatically segment and identify steps in instructional videos. Parsing a video into its steps has several use cases-training video action recognition models to recognize steps, creating visual summaries highlighting relevant steps, identifying mistakes in steps of the video, and retrieving/localizing steps in the video to name a few. Our framework LUSE, zero-shot prompts a Large Language Model (LLM) to extract steps from the transcript of a single instructional video. Next, the steps across several videos of the same task are consolidated to generate a general set of steps for the task, via a second pass through the LLM, and are then localized back in the transcript of each video. Existing datasets for steps rely on manual annotations which are expensive to collect and oftentimes subjective. Our fully automated approach overcomes these issues and generates competitive quality step labels, as highlighted by our qualitative examples. Furthermore, we fine-tune a state-of-theart image captioning model on our generated steps to show that the resulting output has better qualitative step descriptions and denser coverage compared to existing manually annotated datasets.},
+  journal={ICCV CVEU Workshop},
+  year={2023},
+  pdf={https://cveu.github.io/2023/papers/36.pdf},
+  dimensions={true},
+  google_scholar_id={u-x6o8ySG0sC},
+  selected={false},
+  preview={luse.jpg}
+}
+
+article{PhysRev.47.777,
   abbr={PhysRev},
   title={Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?},
   author={Einstein*†, A. and Podolsky*, B. and Rosen*, N.},
@@ -61,7 +93,7 @@
   inspirehep_id = {3255}
 }
 
-@article{einstein1905molekularkinetischen,
+article{einstein1905molekularkinetischen,
   title={{\"U}ber die von der molekularkinetischen Theorie der W{\"a}rme geforderte Bewegung von in ruhenden Fl{\"u}ssigkeiten suspendierten Teilchen},
   author={Einstein, A.},
   journal={Annalen der physik},
@@ -72,7 +104,7 @@
   publisher={Wiley Online Library}
 }
 
-@article{einstein1905movement,
+article{einstein1905movement,
   abbr={Ann. Phys.},
   title={Un the movement of small particles suspended in statiunary liquids required by the molecular-kinetic theory 0f heat},
   author={Einstein, A.},
@@ -82,13 +114,13 @@
   year={1905}
 }
 
-@article{einstein1905electrodynamics,
+article{einstein1905electrodynamics,
   title={On the electrodynamics of moving bodies},
   author={Einstein, A.},
   year={1905}
 }
 
-@Article{einstein1905photoelectriceffect,
+Article{einstein1905photoelectriceffect,
   bibtex_show={true},
   abbr={Ann. Phys.},
   title="{{\"U}ber einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt}",
@@ -104,7 +136,7 @@
   award_name={Nobel Prize}
 }
 
-@book{przibram1967letters,
+book{przibram1967letters,
   bibtex_show={true},
   title={Letters on wave mechanics},
   author={Einstein, Albert and Schrödinger, Erwin and Planck, Max and Lorentz, Hendrik Antoon and Przibram, Karl},
