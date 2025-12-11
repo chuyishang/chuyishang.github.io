@@ -393,16 +393,14 @@ ninja.data = [{
             window.location.href = "/blog/2015/formatting-and-links/";
           
         },
-      },{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
+      },{id: "news-our-paper-traveler-a-modular-multi-lmm-agent-framework-for-video-question-answering-is-accepted-to-emnlp-2024",
+          title: 'Our paper, TraveLER: A Modular Multi-LMM Agent Framework for Video Question-Answering, is accepted...',
           description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
+          section: "News",},{id: "news-i-graduated-from-uc-berkeley-with-degrees-in-computer-science-and-economics",
+          title: 'I graduated from UC Berkeley with degrees in Computer Science and Economics!',
           description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/announcement_2/";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
+          section: "News",},{id: "news-i-started-my-m-s-in-eecs-at-uc-berkeley",
+          title: 'I started my M.S. in EECS at UC Berkeley!',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
@@ -450,6 +448,13 @@ ninja.data = [{
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
             },},{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=eUhiw1kAAAAJ", "_blank");
+        },
+      },{
       id: 'light-theme',
       title: 'Change theme to light',
       description: 'Change the theme of the site to Light',
