@@ -1,23 +1,11 @@
 metadata:
-  last_updated: '2025-11-09'
+  last_updated: '2025-12-19'
 papers:
-  qc6CJjYAAAAJ:ziRtHtnO-_kC:
-    citations: 0
-    title: Robert Nathan
-    year: '1967'
-  qc6CJjYAAAAJ:ziW8EwMpto0C:
-    citations: 0
-    title: "Albert Einstein] to Rudolf F\xF6rster: Letter, 17 Jan 1918"
-    year: Unknown Year
-  qc6CJjYAAAAJ:zxzvZ9-XIW8C:
-    citations: 72
-    title: Albert Einstein, the human side
-    year: '2013'
   eUhiw1kAAAAJ:d1gkVwhDpl0C:
     citations: 23
-    title: "TraveLER: A Modular Multi-LMM Agent Framework for Video Question-Answering"
-    year: 2024
+    title: 'Traveler: A modular multi-lmm agent framework for video question-answering'
+    year: '2024'
   eUhiw1kAAAAJ:u-x6o8ySG0sC:
     citations: 6
-    title: "LUSE: Using LLMs for Unsupervised Step Extraction in Instructional Videos"
-    year: 2023
+    title: 'LUSE: Using LLMs for Unsupervised Step Extraction in Instructional Videos'
+    year: '2023'
