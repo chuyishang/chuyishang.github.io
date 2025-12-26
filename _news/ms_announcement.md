@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I started my M.S. in EECS at UC Berkeley!
+I started my M.S. in EECS at UC Berkeley

@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I graduated from UC Berkeley with degrees in Computer Science and Economics!
+I graduated from UC Berkeley with degrees in Computer Science and Economics
