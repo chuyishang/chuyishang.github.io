@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "news-our-paper-traveler-a-modular-multi-lmm-agent-framework-for-video-question-answering-is-accepted-to-emnlp-2024",
+        },{id: "post-a-distill-style-blog-post",
+        
+          title: "a distill-style blog post",
+        
+        description: "an example of a distill-style blog post and main elements",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2021/jax-lm/";
+          
+        },
+      },{id: "news-our-paper-traveler-a-modular-multi-lmm-agent-framework-for-video-question-answering-is-accepted-to-emnlp-2024",
           title: 'Our paper, TraveLER: A Modular Multi-LMM Agent Framework for Video Question-Answering, is accepted...',
           description: "",
           section: "News",},{id: "news-i-graduated-from-uc-berkeley-with-degrees-in-computer-science-and-economics",
