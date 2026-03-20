@@ -934,10 +934,18 @@ code {
   background-color: var(--global-code-bg-color);
   border-radius: 3px;
   padding: 3px 3px;
+}
 
-  // Inline code should wrap
+// Inline code should wrap.
+:not(pre) > code {
   white-space: normal;
   word-wrap: break-word;
+}
+
+// Preserve line breaks/indentation for fenced code blocks.
+pre code {
+  white-space: pre !important;
+  word-wrap: normal !important;
 }
 
 // Transitioning Themes

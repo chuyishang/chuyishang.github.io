@@ -21,12 +21,20 @@ module Jekyll
 
       def directory_files_content
         target_path = File.join(directory, '**', '*')
-        Dir[target_path].map{|f| File.read(f) unless File.directory?(f) }.join
+        files = Dir[target_path].reject { |f| File.directory?(f) }
+        return files.sort.map { |f| File.read(f) }.join unless files.empty?
+
+        # Fallback for environments where the Sass directory is not present in cwd.
+        file_content
       end
 
       def file_content
         local_file_name = file_name.slice((file_name.index('assets/')..-1))
         File.read(local_file_name)
+      rescue Errno::ENOENT
+        # For CSS assets, fall back to the source SCSS when the compiled CSS
+        # does not exist yet in the current working directory.
+        File.read(local_file_name.sub(/\.css\z/, '.scss'))
       end
 
       def file_contents
@@ -43,7 +51,7 @@ module Jekyll
     end
 
     def bust_css_cache(file_name)
-      CacheDigester.new(file_name: file_name, directory: 'assets/_sass').digest!
+      CacheDigester.new(file_name: file_name, directory: '_sass').digest!
     end
   end
 end
