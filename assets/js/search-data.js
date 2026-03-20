@@ -30,15 +30,15 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "post-a-distill-style-blog-post",
+        },{id: "post-jax-lm",
         
-          title: "a distill-style blog post",
+          title: "JAX-LM",
         
-        description: "an example of a distill-style blog post and main elements",
+        description: "A guide to language modelling and distributed training from scratch in JAX",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2021/jax-lm/";
+            window.location.href = "/blog/2026/jax-lm/";
           
         },
       },{id: "news-our-paper-traveler-a-modular-multi-lmm-agent-framework-for-video-question-answering-is-accepted-to-emnlp-2024",
