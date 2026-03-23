@@ -41,6 +41,17 @@ ninja.data = [{
             window.location.href = "/blog/2026/jax-lm/";
           
         },
+      },{id: "post-jax-lm-assignment",
+        
+          title: "JAX-LM Assignment",
+        
+        description: "The assignment companion for JAX-LM",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/assignment/";
+          
+        },
       },{id: "news-our-paper-traveler-a-modular-multi-lmm-agent-framework-for-video-question-answering-is-accepted-to-emnlp-2024",
           title: 'Our paper, TraveLER: A Modular Multi-LMM Agent Framework for Video Question-Answering, is accepted...',
           description: "",
