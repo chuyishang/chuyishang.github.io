@@ -30,9 +30,9 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "post-jax-lm-building-a-language-model-in-jax",
+        },{id: "post-jax-lm-language-modelling-and-distributed-training-in-jax",
         
-          title: "JAX-LM: Building a Language Model in JAX",
+          title: "JAX-LM: Language Modelling and Distributed Training in JAX",
         
         description: "A guide to language modelling and distributed training from scratch in JAX",
         section: "Posts",
