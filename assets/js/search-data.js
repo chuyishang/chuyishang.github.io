@@ -70,6 +70,9 @@ ninja.data = [{
           section: "News",},{id: "news-our-paper-latent-implicit-visual-reasoning-livr-is-accepted-to-cvpr-2026",
           title: 'Our paper, Latent Implicit Visual Reasoning (LIVR), is accepted to CVPR 2026!',
           description: "",
+          section: "News",},{id: "news-we-released-our-blog-post-jax-lm-language-modeling-and-distributed-training-in-jax",
+          title: 'We released our blog post JAX-LM: Language Modeling and Distributed Training in JAX!...',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
