@@ -73,7 +73,17 @@ ninja.data = [{
           section: "News",},{id: "news-we-released-our-blog-post-jax-lm-language-modeling-and-distributed-training-in-jax",
           title: 'We released our blog post JAX-LM: Language Modeling and Distributed Training in JAX!...',
           description: "",
-          section: "News",},{
+          section: "News",},{id: "projects-big-video-lm",
+          title: 'Big Video LM',
+          description: "A repository for Video LM finetuning/inference in JAX",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/big_video_lm/";
+            },},{id: "projects-safeguard",
+          title: 'Safeguard',
+          description: "Hackathon project winner for the UC Berkeley AI Hackathon 2024. Protect your LLM application against prompt injection attacks and malicious inputs in less than 3 lines of code.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/safeguard/";
+            },},{
         id: 'social-github',
         title: 'GitHub',
         section: 'Socials',
