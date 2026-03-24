@@ -4,7 +4,7 @@ title: JAX-LM Assignment
 description: The assignment companion for JAX-LM
 tags: distill formatting
 giscus_comments: true
-date: 2026-03-20
+date: 2026-03-24
 featured: false
 mermaid:
   enabled: true

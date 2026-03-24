@@ -1,9 +1,9 @@
 ---
 layout: page
-title: project 3 with very long name
-description: a project that redirects to another website
-img: assets/img/7.jpg
-redirect: https://unsplash.com
+title: Safeguard
+description: Hackathon project winner for the UC Berkeley AI Hackathon 2024. Protect your LLM application against prompt injection attacks and malicious inputs in less than 3 lines of code.
+img: assets/img/safeguard_img.jpg
+redirect: https://devpost.com/software/safeguard-a1hfp4
 importance: 3
 category: work
 ---
