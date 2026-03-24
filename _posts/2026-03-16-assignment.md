@@ -115,7 +115,7 @@ If you don't have acess to accelerators, you can simulate a device mesh using CP
 ## Getting Started
 The blank starter code is provided on the `assignment-starter-code` branch. To clone only the starter code:
 ```bash
-git clone --single-branch --branch assignment-starter-code https://github.com/chuyishang/cs336-jax.git
+git clone --single-branch --branch assignment https://github.com/chuyishang/jax-lm.git
 ```
 
 **Repository Structure**
