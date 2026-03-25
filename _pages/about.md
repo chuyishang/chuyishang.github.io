@@ -41,4 +41,4 @@ Hi! I'm Chuyi, a machine learning researcher at Berkeley AI Research (BAIR), whe
 
 Outside of research, I enjoy cooking, music, history, and browsing through Wikipedia.
 
-Feel free to reach out to me about anything - I’m more than happy to chat!
+Feel free to reach out to me about anything at [first][last]@berkeley.edu - I’m more than happy to chat!
