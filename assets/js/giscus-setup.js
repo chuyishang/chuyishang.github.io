@@ -20,9 +20,10 @@ function determineGiscusTheme() {
     src: "https://giscus.app/client.js",
     "data-repo": "chuyishang/chuyishang.github.io",
     "data-repo-id": "R_kgDOQhbMFQ",
-    "data-category": "Comments",
-    "data-category-id": "General",
+    "data-category": "General",
+    "data-category-id": "DIC_kwDOQhbMFc4C5JR6",
     "data-mapping": "specific",
+    
     "data-strict": "0",
     "data-reactions-enabled": "1",
     "data-emit-metadata": "0",
@@ -39,4 +40,3 @@ function determineGiscusTheme() {
   );
   document.getElementById("giscus_thread").appendChild(giscusScript);
 })();
-
