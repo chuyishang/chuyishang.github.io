@@ -29,6 +29,11 @@ function determineGiscusTheme() {
     "data-category": "{{ site.giscus.category }}",
     "data-category-id": "{{ site.giscus.category_id }}",
     "data-mapping": "{{ site.giscus.mapping }}",
+    {% if page.giscus_term %}
+      "data-term": "{{ page.giscus_term }}",
+    {% elsif site.giscus.term %}
+      "data-term": "{{ site.giscus.term }}",
+    {% endif %}
     "data-strict": "{{ site.giscus.strict }}",
     "data-reactions-enabled": "{{ site.giscus.reactions_enabled }}",
     "data-emit-metadata": "{{ site.giscus.emit_metadata }}",
@@ -45,4 +50,3 @@ function determineGiscusTheme() {
   );
   document.getElementById("giscus_thread").appendChild(giscusScript);
 })();
-

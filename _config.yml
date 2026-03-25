@@ -100,10 +100,10 @@ related_blog_posts:
 giscus:
   repo: chuyishang/chuyishang.github.io
   repo_id: "R_kgDOQhbMFQ"
-  category: Comments # name of the category under which discussions will be created
-  category_id: "General" # leave empty or specify your category_id (see https://giscus.app/)
-  mapping: specific # identify discussions by post title
-  term: "JAX-LM"
+  category: "General" # name of the category under which discussions will be created
+  category_id: "DIC_kwDOQhbMFc4C5JR6" 
+  mapping: specific # use an explicit discussion term to link a page to an existing discussion
+  term: # optional site-wide fallback when mapping is "specific"
   strict: 0 # use non-strict identification mode
   reactions_enabled: 1 # enable (1) or disable (0) emoji reactions
   input_position: bottom # whether to display input form below (bottom) or above (top) the comments
@@ -111,10 +111,6 @@ giscus:
   light_theme: light # name of the light color scheme (preferred works well with al-folio light mode)
   emit_metadata: 0
   lang: en
-
-# Disqus comments (DEPRECATED)
-disqus_shortname: al-folio # put your disqus shortname
-# https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
 # External sources.
 # If you have blog posts published on medium.com or other external sources,
