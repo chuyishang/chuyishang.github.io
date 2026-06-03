@@ -184,14 +184,34 @@
             text-align: left;
         }
 
+        table.livr-table tr.livr-row {
+            border-color: #8fbce8;
+        }
+
+        table.livr-table tr.livr-row td {
+            background: #eaf4ff !important;
+        }
+
+        table.livr-table tr.livr-row td:first-child {
+            box-shadow: inset 4px 0 #4f91cf;
+        }
+
+        table.livr-table tr.livr-row td:first-child b {
+            color: var(--livr-blue);
+        }
+
+        .score-emphasis table.livr-table td:not(:first-child) > b {
+            font-weight: 700;
+        }
+
         .gain {
             color: var(--livr-green);
-            font-weight: 700;
+            font-weight: 400;
         }
 
         .loss {
             color: #a4483a;
-            font-weight: 700;
+            font-weight: 400;
         }
 
         .second-best {
@@ -213,6 +233,10 @@
             gap: 18px;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             margin-top: 18px;
+        }
+
+        .comparison-grid {
+            grid-template-columns: 1fr;
         }
 
         .table-card {
@@ -342,7 +366,8 @@
     <div class="container blog main first">
         <h1>Abstract</h1>
         <p class="text">
-            Large Multimodal Models (LMMs) have made significant progress, but many still rely on language as their primary reasoning medium. This is powerful when a problem can be translated cleanly into text, yet it leaves models less suited to tasks where the decisive evidence is visual: fine-grained image structure, spatial layout, perceptual similarity, or local correspondences.
+            While Large Multimodal Models (LMMs) have made significant progress, they remain largely text-centric, relying on language as their core reasoning modality. As a result, they are limited in their ability to handle reasoning tasks that are predominantly visual. Recent approaches have sought to address this by supervising intermediate visual steps with helper images, depth maps, or image crops. However, these strategies impose restrictive priors on what ``useful'' visual abstractions look like, add heavy annotation costs, and struggle to generalize across tasks. To address this critical limitation, we propose \textbf{Latent Implicit Visual Reasoning (LIVR)}, a task-agnostic mechanism that trains LMMs to discover and use \textbf{latent visual reasoning tokens} without explicit intermediate supervision. These tokens attend globally and re-encode the image in a task-adaptive way, enabling the model to extract relevant visual information without hand-crafted supervision. LIVR consistently outperforms direct supervised fine-tuning across diverse vision-centric tasks and multiple LMM backbones. In broader comparisons, LIVR remains competitive with or outperforms prior text-based and explicit-visual-intermediate reasoning methods, while requiring no additional intermediate supervision such as helper images, bounding boxes, image crops, depth maps, or chain-of-thought annotations. 
+
         </p>
         <p class="text">
             Recent methods try to close this gap by supervising intermediate visual steps with helper images, depth maps, image crops, bounding boxes, or similar artifacts. These intermediates can guide a model, but they also decide in advance what a useful visual abstraction should look like, adding curation costs and task-specific priors that can make generalization harder.
@@ -370,8 +395,7 @@
             In Stage 2, the standard attention mask is restored. The model can then combine the original image tokens with the latent tokens that were trained to carry useful visual abstractions. The loss is still computed only on answer tokens, so the method does not require boxes, crops, helper images, depth maps, masks, text rationales, or other intermediate supervision.
         </p>
         <p class="text">
-            At inference time, the latents are inserted once with the prompt and the model decodes the answer normally. Since they are not autoregressive output tokens, LIVR adds a compact learned workspace without asking the model to emit long textual chains of thought or commit to a hand-designed visual intermediate.
-        </p>
+            At inference time, the latents are inserted once with the prompt and the model decodes the answer normally. Since they are not autoregressive output tokens, LIVR unlocks the power of expressive latents without the associated inference overhead.
     </div>
 
     <div class="container blog extra-large gray">
@@ -382,10 +406,10 @@
         </p>
     </div>
 
-    <div class="container blog main">
+    <div class="container blog main score-emphasis">
         <h1>Results</h1>
         <p class="text">
-            First, we compare LIVR to direct supervised fine-tuning (SFT) in a data-matched setting. Then, we compare our method with existing methods that are trained with visual intermediates. Scores follow the paper convention: <b>bold</b> marks the best method in a block, and underlining marks the second-best score.
+            First, we compare LIVR to direct supervised fine-tuning (SFT) in a data-matched setting. Then, we compare our method with existing methods that are trained with textual chain-of-thought or explicit visual intermediates. Scores follow the paper convention: <b>bold</b> marks the best method in a block, and underlining marks the second-best score.
         </p>
 
         <h2>Single-Task Fine-Tuning</h2>
@@ -449,7 +473,7 @@
                         <td><span class="second-best">89.63</span></td>
                         <td><span class="second-best">61.61</span></td>
                     </tr>
-                    <tr>
+                    <tr class="livr-row">
                         <td><b>LIVR</b></td>
                         <td><b>63.64</b></td>
                         <td><b>65.33</b></td>
@@ -504,7 +528,7 @@
                         <td><span class="second-best">91.11</span></td>
                         <td><span class="second-best">74.12</span></td>
                     </tr>
-                    <tr>
+                    <tr class="livr-row">
                         <td><b>LIVR</b></td>
                         <td><span class="second-best">66.67</span></td>
                         <td><b>85.33</b></td>
@@ -559,7 +583,7 @@
                         <td><b>92.59</b></td>
                         <td><span class="second-best">63.70</span></td>
                     </tr>
-                    <tr>
+                    <tr class="livr-row">
                         <td><b>LIVR</b></td>
                         <td><b>63.64</b></td>
                         <td><b>70.67</b></td>
@@ -628,7 +652,7 @@
                         <td><span class="second-best">56.72</span></td>
                         <td><span class="second-best">69.60</span></td>
                     </tr>
-                    <tr>
+                    <tr class="livr-row">
                         <td><b>LIVR</b></td>
                         <td><b>67.80</b></td>
                         <td><b>81.97</b></td>
@@ -656,14 +680,14 @@
         </p>
     </div>
 
-    <div class="container blog extra-large">
+    <div class="container blog extra-large score-emphasis">
         <h1>Comparison Highlights</h1>
         <p class="text">
-            These tables compare LIVR with recent methods that use external intermediate supervision, generated visual steps, or RL-style training. The main point is the table itself: LIVR stays competitive without boxes, crops, masks, helper images, text rationales, or task-specific intermediate labels.
+            These tables compare LIVR with recent methods that use external intermediate supervision, generated visual steps, or RL-style training.
         </p>
-        <div class="result-grid">
+        <div class="result-grid comparison-grid">
             <div class="table-card">
-                <h3>Spatial Reasoning Benchmarks</h3>
+                <h3>Spatial Reasoning Generalization</h3>
                 <div class="table-wrapper">
                     <table class="livr-table">
                         <thead>
@@ -705,7 +729,7 @@
                                 <td><span class="second-best">48.5</span></td>
                                 <td><span class="second-best">67.1</span></td>
                             </tr>
-                            <tr>
+                            <tr class="livr-row">
                                 <td><b>LIVR-3B</b></td>
                                 <td><b>85.6</b></td>
                                 <td><b>59.5</b></td>
@@ -719,7 +743,7 @@
                 </p>
             </div>
             <div class="table-card">
-                <h3>LVR / RL Method Comparison</h3>
+                <h3>Broader Visual Reasoning Benchmarks</h3>
                 <div class="table-wrapper">
                     <table class="livr-table">
                         <thead>
@@ -761,7 +785,7 @@
                                 <td><b>80.6</b></td>
                                 <td><b>55.37</b></td>
                             </tr>
-                            <tr>
+                            <tr class="livr-row">
                                 <td><b>LIVR-7B</b></td>
                                 <td><b>75.3</b></td>
                                 <td><span class="second-best">80.1</span></td>
@@ -774,339 +798,7 @@
                     All rows except LIVR-7B are reported from LVR.
                 </p>
             </div>
-            <div class="table-card">
-                <h3>Mirage Comparison</h3>
-                <div class="table-wrapper">
-                    <table class="livr-table">
-                        <thead>
-                            <tr>
-                                <th>Method</th>
-                                <th>Jigsaw</th>
-                                <th>VSP</th>
-                            </tr>
-                        </thead>
-                        <tbody class="center">
-                            <tr>
-                                <td>Zero-shot</td>
-                                <td><span class="second-best">49.33</span></td>
-                                <td>6.00</td>
-                            </tr>
-                            <tr>
-                                <td>Mirage</td>
-                                <td>48.60</td>
-                                <td><span class="second-best">46.00</span></td>
-                            </tr>
-                            <tr>
-                                <td><b>LIVR</b></td>
-                                <td><b>68.00</b></td>
-                                <td><b>66.00</b></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p class="table-caption">
-                    Comparison with Mirage on Jigsaw and Visual Spatial Planning using Qwen2.5-VL-3B-Instruct.
-                </p>
-            </div>
         </div>
-    </div>
-
-    <div class="container blog main gray">
-        <h1>Ablations</h1>
-        <p class="text">
-            These controls show that the gains come from both dedicated latent tokens and the bottleneck training objective, rather than simply adding more tokens or additional visual capacity.
-        </p>
-        <details class="table-detail">
-            <summary>Ablations and controls</summary>
-            <div class="detail-body">
-                <div class="result-grid">
-            <div class="table-card">
-                <h3>Usefulness of Latent Tokens</h3>
-                <div class="table-wrapper">
-                    <table class="livr-table">
-                        <thead>
-                            <tr>
-                                <th>Method</th>
-                                <th>Acc</th>
-                                <th>Acc (LD)</th>
-                                <th>Masked Acc</th>
-                                <th>Masked Acc (LD)</th>
-                                <th>Attn on Latents</th>
-                            </tr>
-                        </thead>
-                        <tbody class="center">
-                            <tr>
-                                <td>Latents only (no mask)</td>
-                                <td>79.51</td>
-                                <td>79.51</td>
-                                <td>43.44</td>
-                                <td>43.44</td>
-                                <td>0.028</td>
-                            </tr>
-                            <tr>
-                                <td><b>LIVR</b></td>
-                                <td><b>83.61</b></td>
-                                <td>76.23</td>
-                                <td><b>70.49</b></td>
-                                <td>43.44</td>
-                                <td>0.076</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p class="table-caption">
-                    Localization results with and without latent dropping (LD), plus test-time bottleneck masking.
-                </p>
-            </div>
-            <div class="table-card">
-                <h3>Design Ablations and Controls</h3>
-                <div class="table-wrapper">
-                    <table class="livr-table">
-                        <thead>
-                            <tr>
-                                <th>Method</th>
-                                <th>Local.</th>
-                                <th>Sem. Corr.</th>
-                                <th>Func. Corr.</th>
-                            </tr>
-                        </thead>
-                        <tbody class="center">
-                            <tr>
-                                <td>Baseline</td>
-                                <td>59.02</td>
-                                <td>39.57</td>
-                                <td>31.51</td>
-                            </tr>
-                            <tr>
-                                <td>Direct SFT</td>
-                                <td>79.51</td>
-                                <td>61.15</td>
-                                <td>58.90</td>
-                            </tr>
-                            <tr>
-                                <td><b>LIVR</b></td>
-                                <td><b>83.61</b></td>
-                                <td><b>64.75</b></td>
-                                <td><b>67.81</b></td>
-                            </tr>
-                            <tr>
-                                <td>Latents only (no mask)</td>
-                                <td>79.51</td>
-                                <td>61.15</td>
-                                <td>58.22</td>
-                            </tr>
-                            <tr>
-                                <td>Mask only (no latents)</td>
-                                <td>80.33</td>
-                                <td>61.16</td>
-                                <td>59.59</td>
-                            </tr>
-                            <tr>
-                                <td>Input image twice (no mask)</td>
-                                <td>78.69</td>
-                                <td>61.16</td>
-                                <td>58.22</td>
-                            </tr>
-                            <tr>
-                                <td>Input image twice (2-stage masking)</td>
-                                <td>77.87</td>
-                                <td>61.87</td>
-                                <td>56.85</td>
-                            </tr>
-                            <tr>
-                                <td>Prompt tuning</td>
-                                <td>71.31</td>
-                                <td>49.64</td>
-                                <td>36.30</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="table-card">
-                <h3>Position of Latents</h3>
-                <div class="table-wrapper">
-                    <table class="livr-table">
-                        <thead>
-                            <tr>
-                                <th>Method</th>
-                                <th>Local.</th>
-                                <th>Sem. Corr.</th>
-                                <th>Func. Corr.</th>
-                            </tr>
-                        </thead>
-                        <tbody class="center">
-                            <tr>
-                                <td>Before prompt</td>
-                                <td>80.33</td>
-                                <td>61.87</td>
-                                <td>63.70</td>
-                            </tr>
-                            <tr>
-                                <td><b>After prompt (ours)</b></td>
-                                <td><b>83.61</b></td>
-                                <td><b>64.75</b></td>
-                                <td><b>67.81</b></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="table-card">
-                <h3>Masking Strategy</h3>
-                <div class="table-wrapper">
-                    <table class="livr-table">
-                        <thead>
-                            <tr>
-                                <th>Method</th>
-                                <th>Local.</th>
-                                <th>Sem. Corr.</th>
-                                <th>Func. Corr.</th>
-                            </tr>
-                        </thead>
-                        <tbody class="center">
-                            <tr>
-                                <td>Ans to Vis only</td>
-                                <td>77.87</td>
-                                <td>60.43</td>
-                                <td>60.27</td>
-                            </tr>
-                            <tr>
-                                <td><b>Ans+Prompt to Vis (ours)</b></td>
-                                <td><b>83.61</b></td>
-                                <td><b>64.75</b></td>
-                                <td><b>67.81</b></td>
-                            </tr>
-                            <tr>
-                                <td>Ours + Latent to Prompt</td>
-                                <td>81.15</td>
-                                <td>62.59</td>
-                                <td>63.01</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="table-card">
-                <h3>Shared vs. Unshared Latent Embeddings</h3>
-                <div class="table-wrapper">
-                    <table class="livr-table">
-                        <thead>
-                            <tr>
-                                <th>Method</th>
-                                <th>Local.</th>
-                                <th>Sem. Corr.</th>
-                                <th>Func. Corr.</th>
-                            </tr>
-                        </thead>
-                        <tbody class="center">
-                            <tr>
-                                <td>Shared</td>
-                                <td>81.15</td>
-                                <td>62.59</td>
-                                <td>64.38</td>
-                            </tr>
-                            <tr>
-                                <td><b>Unshared (ours)</b></td>
-                                <td><b>83.61</b></td>
-                                <td><b>64.75</b></td>
-                                <td><b>67.81</b></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="table-card">
-                <h3>Number of Latents</h3>
-                <div class="table-wrapper">
-                    <table class="livr-table">
-                        <thead>
-                            <tr>
-                                <th># Latents</th>
-                                <th>Local.</th>
-                                <th>Sem. Corr.</th>
-                                <th>Func. Corr.</th>
-                            </tr>
-                        </thead>
-                        <tbody class="center">
-                            <tr>
-                                <td>4</td>
-                                <td>81.15</td>
-                                <td>62.59</td>
-                                <td>66.40</td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td>80.33</td>
-                                <td>63.31</td>
-                                <td>67.12</td>
-                            </tr>
-                            <tr>
-                                <td><b>16 (ours)</b></td>
-                                <td><b>83.61</b></td>
-                                <td><b>64.75</b></td>
-                                <td><b>67.81</b></td>
-                            </tr>
-                            <tr>
-                                <td>32</td>
-                                <td>80.33</td>
-                                <td>62.59</td>
-                                <td>63.01</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="table-card">
-                <h3>Stage-1 / Stage-2 Schedule</h3>
-                <div class="table-wrapper">
-                    <table class="livr-table">
-                        <thead>
-                            <tr>
-                                <th>Epochs (S1, S2)</th>
-                                <th>Local.</th>
-                                <th>Sem. Corr.</th>
-                                <th>Func. Corr.</th>
-                            </tr>
-                        </thead>
-                        <tbody class="center">
-                            <tr>
-                                <td>0, 10</td>
-                                <td>79.51</td>
-                                <td>61.15</td>
-                                <td>58.22</td>
-                            </tr>
-                            <tr>
-                                <td>2, 8</td>
-                                <td>80.33</td>
-                                <td>58.27</td>
-                                <td>65.75</td>
-                            </tr>
-                            <tr>
-                                <td><b>4, 6 (ours)</b></td>
-                                <td><b>83.61</b></td>
-                                <td><b>64.75</b></td>
-                                <td><b>67.81</b></td>
-                            </tr>
-                            <tr>
-                                <td>6, 4</td>
-                                <td>81.15</td>
-                                <td>61.87</td>
-                                <td>66.44</td>
-                            </tr>
-                            <tr>
-                                <td>8, 2</td>
-                                <td>77.87</td>
-                                <td>59.71</td>
-                                <td>60.27</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-                </div>
-            </div>
-        </details>
     </div>
 
     <div class="container blog main">
