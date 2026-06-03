@@ -184,9 +184,25 @@ exclude:
   - purgecss.config.js
   - README.md
   - readme_preview/
+  - assets/jupyter/blog.ipynb
   - vendor
   # Start of own excluded files
   - _books/
+  - documents/livr/clarity-template/.gitignore
+  - documents/livr/clarity-template/README.md
+  - documents/livr/clarity-template/index.html
+  - documents/livr/clarity-template/minimal.html
+  - documents/livr/clarity-template/clarity.html
+  - documents/livr/clarity-template/assets/scripts/main.js
+  - documents/livr/clarity-template/assets/stylesheets/_master.scss
+  - documents/livr/clarity-template/assets/stylesheets/main.css
+  - documents/livr/clarity-template/assets/stylesheets/main.css.map
+  - documents/livr/clarity-template/assets/stylesheets/main.scss
+  - documents/livr/clarity-template/assets/stylesheets/main_free.css.map
+  - documents/livr/clarity-template/assets/stylesheets/main_free.scss
+  - documents/livr/clarity-template/clarity/clarity.css.map
+  - documents/livr/clarity-template/clarity/clarity.scss
+  - documents/livr/clarity-template/clarity/images/
 keep_files:
   - CNAME
   - .nojekyll
@@ -220,6 +236,9 @@ defaults:
 
 sass:
   style: compressed
+  silence_deprecations:
+    - import
+    - global-builtin
 
 # -----------------------------------------------------------------------------
 # Jekyll Minifier
@@ -345,7 +364,7 @@ external_links:
 # MAKE SURE imagemagick is installed and on your PATH before enabling imagemagick. In a terminal, run:
 #   convert -version
 imagemagick:
-  enabled: true # enables responsive images for your site (recommended, see https://github.com/alshedivat/al-folio/issues/537)
+  enabled: false # local builds do not require ImageMagick; CI re-enables this in _config_production.yml
   widths:
     - 480
     - 800

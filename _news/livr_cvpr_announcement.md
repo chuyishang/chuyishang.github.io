@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our paper, *Latent Implicit Visual Reasoning (LIVR)*, is accepted to CVPR 2026!
+Our paper, [*Latent Implicit Visual Reasoning (LIVR)*](/documents/livr/), is accepted to CVPR 2026!

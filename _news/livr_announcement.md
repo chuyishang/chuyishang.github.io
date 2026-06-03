@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-We released our preprint *Latent Implicit Visual Reasoning* !
+We released our preprint [*Latent Implicit Visual Reasoning*](/documents/livr/)!
