@@ -65,7 +65,7 @@ ninja.data = [{
           title: 'I started my M.S. in EECS at UC Berkeley',
           description: "",
           section: "News",},{id: "news-we-released-our-preprint-latent-implicit-visual-reasoning",
-          title: 'We released our preprint Latent Implicit Visual Reasoning !',
+          title: 'We released our preprint Latent Implicit Visual Reasoning!',
           description: "",
           section: "News",},{id: "news-our-paper-latent-implicit-visual-reasoning-livr-is-accepted-to-cvpr-2026",
           title: 'Our paper, Latent Implicit Visual Reasoning (LIVR), is accepted to CVPR 2026!',
