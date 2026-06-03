@@ -8,6 +8,7 @@ on:
     paths:
       - "assets/**"
       - "documents/**"
+      - "livr/**"
       - "_sass/**"
       - "_scripts/**"
       - "**.bib"
@@ -38,6 +39,7 @@ on:
     paths:
       - "assets/**"
       - "documents/**"
+      - "livr/**"
       - "_sass/**"
       - "_scripts/**"
       - "**.bib"

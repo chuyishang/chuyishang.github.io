@@ -14,7 +14,7 @@ keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your o
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
-url: https://chuyishang.github.io # the base hostname & protocol for your site
+url: https://www.chuyishang.com # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
 last_updated: false # set to true if you want to display last updated in the footer
 impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
@@ -203,6 +203,21 @@ exclude:
   - documents/livr/clarity-template/clarity/clarity.css.map
   - documents/livr/clarity-template/clarity/clarity.scss
   - documents/livr/clarity-template/clarity/images/
+  - livr/clarity-template/.gitignore
+  - livr/clarity-template/README.md
+  - livr/clarity-template/index.html
+  - livr/clarity-template/minimal.html
+  - livr/clarity-template/clarity.html
+  - livr/clarity-template/assets/scripts/main.js
+  - livr/clarity-template/assets/stylesheets/_master.scss
+  - livr/clarity-template/assets/stylesheets/main.css
+  - livr/clarity-template/assets/stylesheets/main.css.map
+  - livr/clarity-template/assets/stylesheets/main.scss
+  - livr/clarity-template/assets/stylesheets/main_free.css.map
+  - livr/clarity-template/assets/stylesheets/main_free.scss
+  - livr/clarity-template/clarity/clarity.css.map
+  - livr/clarity-template/clarity/clarity.scss
+  - livr/clarity-template/clarity/images/
 keep_files:
   - CNAME
   - .nojekyll
