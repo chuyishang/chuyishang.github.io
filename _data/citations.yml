@@ -1,15 +1,15 @@
 metadata:
-  last_updated: '2026-06-24'
+  last_updated: '2026-07-01'
 papers:
   eUhiw1kAAAAJ:2osOgNQ5qMEC:
     citations: 4
     title: Latent implicit visual reasoning
     year: '2026'
   eUhiw1kAAAAJ:d1gkVwhDpl0C:
-    citations: 34
+    citations: 37
     title: 'Traveler: A modular multi-lmm agent framework for video question-answering'
     year: '2024'
   eUhiw1kAAAAJ:u-x6o8ySG0sC:
-    citations: 6
+    citations: 7
     title: 'Luse: Using llms for unsupervised step extraction in instructional videos'
     year: '2023'
